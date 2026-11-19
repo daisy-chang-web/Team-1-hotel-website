@@ -1,0 +1,79 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'placeholders' as *;
+
+header{
+    @include flex($jc: space-between, $wrap: wrap);
+    padding: 2.5rem $padding 1.25rem;
+    background-color: $primary;
+
+    .site-logo{
+        font-family: $heading;
+        font-size: $fs-sm;
+    }
+
+    #hamburger {
+        text-transform: uppercase;
+        border: none;
+        padding: .5rem 1rem;
+        font-weight: 600;
+    }
+
+    @include mq-tab {
+        #hamburger {
+            display: none;
+        }
+    }
+}
+
+nav {
+    // Locally scoped variable
+    $height: 3rem;
+    $border: 0;
+
+    background-color: $primary;
+    display: none;
+
+    .show & {
+        display: block;
+        position: absolute;
+        top: 170px;
+        left: 0;
+        right: 0;
+    }
+
+    ul {
+        @extend %reset-list;
+    }
+
+    a  {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        padding: .5rem;
+    }
+
+    @include mq-tab {
+
+        &,
+        .show & {
+            display: block;
+            background-color: transparent;
+
+            ul {
+                @include flex($jc: space-between);
+            }
+
+            a {
+                color: $light;
+            }
+
+            a,
+            .dark & a {
+                border: none;
+
+            }
+        }
+    }
+}

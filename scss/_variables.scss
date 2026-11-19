@@ -1,0 +1,41 @@
+@use 'sass:math';
+@use 'sass:color';
+
+// Colors
+$primary: #313F38;
+$secondary: #DFBA43;
+$light: #FFFCF6;
+$text: #1B3B36;
+$error: #B03E3E;
+$success: #2A5B46;
+$attention: #DC9B39;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap');
+$body-font: "Roboto Condensed", sans-serif;
+$heading: "MuseoModerno", sans-serif;
+
+// Fonts size
+$fs-base: 1rem;                               //16px (Body)
+$fs-sm: clamp(1rem, 1.25vw, 1.125rem);        //phone 16px - desktop 18px (Body)
+$fs-md: clamp(1rem, 1.8vw, 1.625rem);         //phone 16px - desktop 26px (Body)
+$fs-lg: clamp(1.625rem, 2.5vw, 2.25rem);      //phone 26px - desktop 36px (button)
+$fs-xl: clamp(1.625rem, 3.5vw, 3.125rem);     //phone 26px - desktop 50px (heading)
+$fs-2xl: clamp(2rem, 5.5vw, 5rem);            //phone 32px - desktop 80px (heading)
+$fs-3xl: clamp(2.5rem, 10.3vw, 9.375rem);     //phone 50px - desktop 150px (heading)
+
+// padding
+$padding: clamp(.625rem, 2vw, 1.875rem);      //phone 30px - desktop 10px
+$padding-wide:clamp(0rem, 13.8vw, 12.5rem);   //phone 200px - desktop 0px
+
+// Function: px to em for media queries
+@function em($px, $bc: 16){
+    @return #{math.div($px, $bc)}em;
+}
+
+$tablet: em(800);
+$laptop: em(1140);
+$desktop: em(1400);
+
+// Utility variables
+$link-hover-selector: '&:hover, &:focus, &:active';

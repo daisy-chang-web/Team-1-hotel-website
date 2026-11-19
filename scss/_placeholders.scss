@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+%flatten {
+  padding: 0;
+  margin: 0;
+}
+
+%reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%container {
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding: $padding;
+}
+
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

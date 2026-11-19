@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+@mixin flex($d: row, $jc: center, $ai: center, $wrap: nowrap, $gap: 1rem) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin grid($columns: 1fr, $rows: 1fr, $gap: 1.5rem) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-columns: $rows;
+  gap: $gap;
+}
+
+@mixin mq-tab {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mq-laptop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin mq-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
