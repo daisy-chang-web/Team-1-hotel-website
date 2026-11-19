@@ -1,79 +1,91 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-@use 'placeholders' as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders" as *;
 
-header{
-    @include flex($jc: space-between, $wrap: wrap);
-    padding: 2.5rem $padding 1.25rem;
-    background-color: $primary;
+header {
+  @include flex($jc: space-between, $wrap: wrap);
+  padding: 2.5rem $padding 1.25rem;
+  background-color: $primary;
 
-    .site-logo{
-        font-family: $heading;
-        font-size: $fs-sm;
+  .site-logo {
+    font-family: $heading;
+    font-size: $fs-sm;
+  }
+
+  #hamburger {
+    background-color: transparent;
+    color: $light;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: $fs-lg;
+  }
+
+  .phone-number {
+    display: none;
+  }
+
+  @include mq-tab {
+    &{
+        padding: 30px $padding 10px;
     }
-
     #hamburger {
-        text-transform: uppercase;
-        border: none;
-        padding: .5rem 1rem;
-        font-weight: 600;
+      display: none;
     }
-
-    @include mq-tab {
-        #hamburger {
-            display: none;
-        }
+    .phone-number {
+      display: block;
     }
+  }
 }
 
 nav {
-    // Locally scoped variable
-    $height: 3rem;
-    $border: 0;
+  // Locally scoped variable
+  $height: 3rem;
+  $border: 0;
 
-    background-color: $primary;
-    display: none;
+  background-color: $primary;
+  display: none;
 
+  .show & {
+    display: block;
+    position: absolute;
+    top: 116px;
+    left: 0;
+    right: 0;
+  }
+
+  ul {
+    @extend %reset-list;
+  }
+
+  a {
+    display: block;
+    font-size:$fs-2xl ;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    padding: 0.5rem;
+  }
+
+  @include mq-tab {
+    &,
     .show & {
-        display: block;
-        position: absolute;
-        top: 170px;
-        left: 0;
-        right: 0;
+      display: block;
+      background-color: transparent;
+
+      ul {
+        @include flex($jc: space-between);
+      }
+
+      a {
+        color: $light;
+      }
+
+      a,
+      .dark & a {
+        border: none;
+      }
     }
-
-    ul {
-        @extend %reset-list;
-    }
-
-    a  {
-        display: block;
-        text-align: center;
-        text-decoration: none;
-        outline: none;
-        padding: .5rem;
-    }
-
-    @include mq-tab {
-
-        &,
-        .show & {
-            display: block;
-            background-color: transparent;
-
-            ul {
-                @include flex($jc: space-between);
-            }
-
-            a {
-                color: $light;
-            }
-
-            a,
-            .dark & a {
-                border: none;
-
-            }
-        }
-    }
+  }
 }
