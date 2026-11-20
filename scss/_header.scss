@@ -63,7 +63,7 @@ header {
     }
   }
 
-  .phone-number {
+  .header-phone-number {
     display: none;
   }
 
@@ -74,7 +74,7 @@ header {
     & div {
       display: none;
     }
-    .phone-number {
+    .header-phone-number {
       display: block;
     }
   }
@@ -204,12 +204,19 @@ nav {
     gap: 1.25rem;
     margin-top: auto;
     padding-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
     text-align: center;
     font-size: $fs-base;
 
     address {
+      display: block;
+      width: auto;
+      margin: 0;
       font-size: $fs-base;
       font-style: normal;
+      color: $light;
+      text-align: center;
       text-transform: uppercase;
     }
   }
