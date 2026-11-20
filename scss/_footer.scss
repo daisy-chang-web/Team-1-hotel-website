@@ -132,7 +132,7 @@
     min-height: 0;
     background-color: $primary;
     color: $light;
-    padding-inline: $padding-wide;
+    padding-inline: $padding;
     padding-bottom: 4.5rem;
   }
 
@@ -168,7 +168,7 @@
   .copyright {
     position: absolute;
     bottom: 2.5rem;
-    left: $padding-wide;
+    left: $padding;
     color: rgba($light, 0.45);
   }
 }
