@@ -1,44 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Room Page</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
     <script src="scripts/script.js" defer></script>
-</head>
-<body>
-    <header>
-        <p><a href="#">BankHotel</a></p>
-        <div>
-            <button class="hamburger" id="hamburger">
-                <span class="hamburger-content">
-                    <span class="text">=</span>
-                    <span class="bar"></span>
-                </span>
-            </button>
+  </head>
+  <body>
+    <header id="header" class="theme-dark">
+      <p class="site-logo"><a href="index.html">BankHotel</a></p>
+      <div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          <span class="hamburger-content">
+            <span class="text" aria-hidden="true"></span>
+            <span class="bar"></span>
+          </span>
+        </button>
+      </div>
+      <nav id="primary-navigation" aria-label="Primary navigation">
+        <img
+          class="mobile-menu-decoration"
+          src="images/decor-starburst-eight-point.svg"
+          width="36"
+          height="36"
+          alt=""
+        />
+        <ul class="primary-navigation-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="facilities.html">Restaurant</a></li>
+          <li><a href="#conference-hall">Conference Hall</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a class="mobile-phone-number" href="tel:+12345678910"
+            >+1 234 567 8910</a
+          >
+          <address>1 Some Street, Vancouver, Canada</address>
+          <ul class="social-links" aria-label="Social media">
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          </ul>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">About</a></li>
-                <li><a href="#0">Room</a></li>
-                <li><a href="#0">Restaurant</a></li>
-                <li><a href="#0">Conference Hall</a></li>
-                <li><a href="#0">contacts</a></li>
-            </ul>
-        </nav>
-        <p><a href="#">+1 234 567 8910</a></p>
+      </nav>
+      <p class="header-phone-number">
+        <a href="tel:+12345678910">+1 234 567 8910</a>
+      </p>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>BankHotel</h1>
-        </section>
+      <!-- Dev 4: rooms page  ------------------------------->
+      <section class="hero">
+        <h1>Superior Twin</h1>
+      </section>
+
+      <!-- get in touch (global) -->
+      <section class="get-in-touch">
+        <div class="contact-banner-info">
+          <a class="phone-number" href="tel:+12345678910"> +1 234 567 8910 </a>
+
+          <address>
+            <span>1 Some Street</span>
+            <span>Vancouver, Canada</span>
+          </address>
+        </div>
+
+        <h2 class="contact-banner-title">
+          <span>Get</span>
+          <span>In</span>
+          <span>Touch</span>
+        </h2>
+
+        <img
+          class="contact-banner-line"
+          src="images/simple-wave.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="contact-banner-decoration"
+          src="images/decor-starburst-eight-point.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="contact-banner-image"
+          src="images/hotel-lobby-seating-area.jpg"
+          alt="Hotel room interior"
+        />
+
+        <p class="find-room-heading">Find a room!</p>
+        <form class="room-search" action="#" method="get">
+          <label>
+            <span>Check in</span>
+            <input type="date" name="check-in" />
+          </label>
+          <label>
+            <span>Check out</span>
+            <input type="date" name="check-out" />
+          </label>
+          <button type="submit">Book room</button>
+        </form>
+      </section>
     </main>
-    
-    <footer>
-        <p class="copyright">&copy;2026 All rights reserved. BankHotel</p>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <section class="footer-about footer-section mobile-disappear">
+          <h2><span class="footer-slash">/</span>About us</h2>
+          <div class="footer-textbox">
+            <p>
+              The five-star hotel in a beautiful European city with a modern
+              restaurant, conference hall, and art-bar.
+            </p>
+          </div>
+        </section>
+
+        <section class="footer-news footer-section mobile-disappear">
+          <h2><span class="footer-slash">/</span>News</h2>
+          <div class="footer-textbox">
+            <p>
+              Sign up to our newsletter not to miss exclusive offers and
+              information about the upcoming events.
+            </p>
+
+            <form class="newsletter-form" action="#" method="post">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <button type="submit" aria-label="Subscribe">→</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="footer-social footer-section mobile-disappear">
+          <h2><span class="footer-slash">/</span>Social</h2>
+
+          <nav class="footer-social-list" aria-label="Social media">
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+      <p class="copyright">&copy;2026 All rights reserved. BankHotel</p>
     </footer>
-</body>
+  </body>
 </html>
