@@ -8,27 +8,39 @@
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
-    <header class="theme-dark">
+    <header id="header" class="theme-dark">
         <p class="site-logo"><a href="index.html">BankHotel</a></p>
         <div>
-            <button class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" type="button"
+                    aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation">
                 <span class="hamburger-content">
-                    <span class="text">=</span>
+                    <span class="text" aria-hidden="true"></span>
                     <span class="bar"></span>
                 </span>
             </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#0">Home</a></li>
+        <nav id="primary-navigation" aria-label="Primary navigation">
+            <img class="mobile-menu-decoration" src="images/decor-starburst-eight-point.svg"
+                 width="36" height="36" alt="">
+            <ul class="primary-navigation-list">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#0">About</a></li>
-                <li><a href="#0">Room</a></li>
-                <li><a href="#0">Restaurant</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="facilities.html">Restaurant</a></li>
                 <li><a href="#0">Conference Hall</a></li>
-                <li><a href="#0">contacts</a></li>
+                <li><a href="contact.html">Contacts</a></li>
             </ul>
+            <div class="mobile-menu-footer">
+                <a class="mobile-phone-number" href="tel:+12345678910">+1 234 567 8910</a>
+                <address>1 Some Street, Vancouver, Canada</address>
+                <ul class="social-links" aria-label="Social media">
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                </ul>
+            </div>
         </nav>
-        <p class="phone-number"><a href="#">+1 234 567 8910</a></p>
+        <p class="phone-number"><a href="tel:+12345678910">+1 234 567 8910</a></p>
     </header>
 
     <main>
