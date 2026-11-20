@@ -1,3 +1,295 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 @use 'placeholders' as *;
+
+.get-in-touch {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 51.625rem;
+  overflow: hidden;
+  padding: 3.25rem $padding 0;
+  background-color: $light;
+  color: $text;
+}
+
+.contact-banner-info {
+  position: relative;
+  z-index: 4;
+  @include flex(row, space-between, flex-start, nowrap, 1rem);
+}
+
+.phone-number {
+  color: $text;
+  font-family: $heading;
+  font-size: $fs-lg;
+  line-height: 1.2;
+  border-bottom: 1px solid $text;
+}
+
+.contact-banner-info address {
+  @include flex(column, flex-start, flex-end, nowrap, 0);
+  width: 9.5rem;
+  margin-top: 7.25rem;
+  color: $text;
+  font-size: $fs-sm;
+  font-style: normal;
+  line-height: 1.45;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.contact-banner-title {
+  position: absolute;
+  z-index: 2;
+  top: 16.5rem;
+  left: $padding;
+  width: calc(100% - ($padding * 2));
+  margin: 0;
+  color: $text;
+  font-family: $heading;
+  font-size: clamp(4.5rem, 18vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.75;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+
+  span {
+    display: block;
+  }
+
+  span:nth-child(2) {
+    margin: 1.25rem 0 0 4rem;
+  }
+
+  span:nth-child(3) {
+    margin-top: 1.25rem;
+    color: $secondary;
+    text-align: right;
+  }
+}
+
+.contact-banner-line {
+  display: none;
+}
+
+.contact-banner-decoration {
+  position: absolute;
+  z-index: 3;
+  top: 28.25rem;
+  left: 38%;
+  width: clamp(2.75rem, 13vw, 4.25rem);
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(63%)
+    saturate(540%) hue-rotate(358deg);
+}
+
+.contact-banner-image {
+  position: absolute;
+  z-index: 2;
+  top: 29.5rem;
+  right: 6%;
+  width: 33%;
+  height: 11.25rem;
+  object-fit: cover;
+}
+
+.find-room-heading {
+  display: none;
+}
+
+.room-search {
+  position: absolute;
+  z-index: 3;
+  bottom: 2.75rem;
+  left: $padding;
+  width: 6.75rem;
+  height: 6.75rem;
+  background-color: $secondary;
+  border-radius: 50%;
+  @include flex(row, center, center, nowrap, 0);
+
+  label {
+    display: none;
+  }
+
+  input {
+    display: none;
+  }
+
+  button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: $secondary;
+    border-radius: 50%;
+    color: $text;
+    font-size: $fs-sm;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $text;
+      outline-offset: -4px;
+    }
+  }
+}
+
+@include mq-tab {
+  .get-in-touch {
+    min-height: 42rem;
+    height: 42rem;
+    background-color: $primary;
+    color: $light;
+    padding: 4.5rem $padding 0;
+  }
+
+  .contact-banner-info {
+    position: absolute;
+    z-index: 4;
+    top: 4.5rem;
+    left: $padding;
+    right: $padding;
+    @include flex(column, flex-start, flex-start, nowrap, 0);
+  }
+
+  .phone-number {
+    color: $secondary;
+    font-family: $heading;
+    font-size: $fs-xl;
+    border: 0;
+  }
+
+  .contact-banner-info address {
+    position: absolute;
+    top: 8.5rem;
+    right: 18%;
+    @include flex(column, flex-start, flex-end, nowrap, 0);
+    width: auto;
+    margin-top: 0;
+    color: $light;
+    font-size: $fs-sm;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  .contact-banner-title {
+    position: absolute;
+    top: 10.5rem;
+    left: $padding;
+    width: 85%;
+    font-size: $fs-3xl;
+    color: $light;
+    line-height: 0.82;
+    z-index: 3;
+
+    span {
+      display: inline;
+    }
+
+    span:nth-child(1) {
+      margin-right: 0.08em;
+    }
+
+    span:nth-child(2) {
+      margin: 0;
+    }
+
+    span:nth-child(3) {
+      display: block;
+      margin-top: 1.25rem;
+      text-align: right;
+    }
+  }
+
+  .contact-banner-line {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 15.5rem;
+    left: 7%;
+    width: 86%;
+    height: 14rem;
+    opacity: 0.45;
+  }
+
+  .contact-banner-decoration {
+    top: 13.5rem;
+    left: 53%;
+    width: 4.25rem;
+  }
+
+  .contact-banner-image {
+    top: 9.5rem;
+    right: 0;
+    width: 27%;
+    height: 15.5rem;
+  }
+
+  .find-room-heading {
+    display: block;
+    position: relative;
+    z-index: 3;
+    margin: 0 0 1.5rem;
+    position: absolute;
+    bottom: 8.75rem;
+    left: $padding;
+    color: $light;
+    font-size: $fs-sm;
+    text-transform: uppercase;
+  }
+
+  .room-search {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: $padding;
+    width: 37%;
+    height: 5.25rem;
+    border-radius: 0;
+    background-color: $secondary;
+
+    label {
+      position: relative;
+      display: block;
+      flex: 1;
+      min-width: 0;
+      box-sizing: border-box;
+      border-right: 1px solid rgba($light, 0.45);
+
+      span {
+        display: block;
+        position: absolute;
+        top: 1.15rem;
+        left: 1.25rem;
+        z-index: 1;
+        color: $light;
+        font-size: $fs-sm;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      height: 5.25rem;
+      box-sizing: border-box;
+      border: 0;
+      padding: 2.5rem 1.25rem 0.75rem;
+      background: transparent;
+      color: $light;
+      text-transform: uppercase;
+    }
+
+    button {
+      flex: 1;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      color: $light;
+      font-size: $fs-sm;
+      text-transform: uppercase;
+    }
+  }
+}
+
