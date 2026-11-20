@@ -1,10 +1,11 @@
-@use 'variables' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 body {
-    font-family: $body-font;
-    line-height: 1.5;
-    background-color: $primary;
-    color: $light;
+  font-family: $body-font;
+  line-height: 1.5;
+  background-color: $primary;
+  color: $light;
 }
 
 h1,
@@ -13,35 +14,63 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $heading;
+  font-family: $heading;
 }
 
-a{
+a {
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 
   &:hover,
-  &:focus-visible {
-    border-bottom: 2px  solid $primary; 
-    outline-offset: 2px;
+  &:focus-visible,
+  &:active {
+    color: $secondary;
+    border-bottom: 2px solid $secondary;
   }
 }
 
-// dark and light theme 
+// dark and light theme
 .theme-dark {
-  background-color: $primary; 
-  color: $light;       
+  background-color: $primary;
+  color: $light;
 
-  h1, h2, h3, p, a {
+  h1,
+  h2,
+  h3,
+  p,
+  a {
     color: $light;
+  }
+
+  a:hover,
+  a:focus-visible,
+  a:active {
+    color: $secondary;
+    border-bottom: 2px solid $secondary;
   }
 }
 
 .theme-light {
-  background-color: $light;   
-  color: $text;               
+  background-color: $light;
+  color: $text;
 
-  h1, h2, h3, p, a {
+  h1,
+  h2,
+  h3,
+  p,
+  a {
     color: $text;
+  }
+}
+
+.mobile-disappear {
+  display: none;
+}
+
+@include mq-tab {
+  .mobile-disappear {
+    display: block;
   }
 }
