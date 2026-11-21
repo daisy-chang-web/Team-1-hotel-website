@@ -1,15 +1,49 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-@use 'placeholders' as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders" as *;
 
+.get-in-touch {
+  --contact-bg: #{$primary};
+  --contact-text: #{$light};
+  --contact-form: #{$secondary};
+  --contact-btn: #{$secondary};
+  --contact-btn-text: #{$text};
+
+  &--light {
+    --contact-bg: #{$light};
+    --contact-text: #{$text};
+    --contact-form: #{$light};
+    --contact-btn: #{$primary};
+    --contact-btn-text: #{$light};
+  }
+
+  &--change {
+    --contact-bg: #{$light};
+    --contact-text: #{$text};
+    --contact-form: #{$secondary};
+    --contact-btn: #{$primary};
+    --contact-btn-text: #{$light};
+  }
+  @include mq-tab {
+    &--change {
+      --contact-bg: #{$primary};
+      --contact-text: #{$light};
+      --contact-form: #{$secondary};
+      --contact-btn: #{$secondary};
+      --contact-btn-text: #{$text};
+    }
+  }
+}
+
+//phone
 .get-in-touch {
   position: relative;
   box-sizing: border-box;
   min-height: 51.625rem;
   overflow: hidden;
   padding: 3.25rem $padding 0;
-  background-color: $light;
-  color: $text;
+  background-color: var(--contact-bg);
+  color: var(--contact-text);
 }
 
 .contact-banner-info {
@@ -19,7 +53,7 @@
 }
 
 .phone-number {
-  color: $text;
+  color: var(--contact-text);
   font-family: $heading;
   font-size: $fs-lg;
   line-height: 1.2;
@@ -30,7 +64,7 @@
   @include flex(column, flex-start, flex-end, nowrap, 0);
   width: 9.5rem;
   margin-top: 7.25rem;
-  color: $text;
+  color: var(--contact-text);
   font-size: $fs-sm;
   font-style: normal;
   line-height: 1.45;
@@ -45,7 +79,7 @@
   left: $padding;
   width: calc(100% - ($padding * 2));
   margin: 0;
-  color: $text;
+  color: var(--contact-text);
   font-family: $heading;
   font-size: clamp(4.5rem, 18vw, 6.5rem);
   font-weight: 400;
@@ -79,8 +113,8 @@
   left: 38%;
   width: clamp(2.75rem, 13vw, 4.25rem);
   height: auto;
-  filter: brightness(0) saturate(100%) invert(73%) sepia(63%)
-    saturate(540%) hue-rotate(358deg);
+  filter: brightness(0) saturate(100%) invert(73%) sepia(63%) saturate(540%)
+    hue-rotate(358deg);
 }
 
 .contact-banner-image {
@@ -104,7 +138,7 @@
   left: $padding;
   width: 6.75rem;
   height: 6.75rem;
-  background-color: $secondary;
+  background-color: var(--contact-form);
   border-radius: 50%;
   @include flex(row, center, center, nowrap, 0);
 
@@ -134,12 +168,11 @@
   }
 }
 
+// desktop
 @include mq-tab {
   .get-in-touch {
     min-height: 42rem;
     height: 42rem;
-    background-color: $primary;
-    color: $light;
     padding: 4.5rem $padding 0;
   }
 
@@ -153,7 +186,6 @@
   }
 
   .phone-number {
-    color: $secondary;
     font-family: $heading;
     font-size: $fs-xl;
     border: 0;
@@ -166,7 +198,6 @@
     @include flex(column, flex-start, flex-end, nowrap, 0);
     width: auto;
     margin-top: 0;
-    color: $light;
     font-size: $fs-sm;
     font-style: normal;
     text-transform: uppercase;
@@ -178,7 +209,6 @@
     left: $padding;
     width: 85%;
     font-size: $fs-3xl;
-    color: $light;
     line-height: 0.82;
     z-index: 3;
 
@@ -233,7 +263,6 @@
     position: absolute;
     bottom: 8.75rem;
     left: $padding;
-    color: $light;
     font-size: $fs-sm;
     text-transform: uppercase;
   }
@@ -246,7 +275,7 @@
     width: 37%;
     height: 5.25rem;
     border-radius: 0;
-    background-color: $secondary;
+    border: 1px solid $primary;
 
     label {
       position: relative;
@@ -254,7 +283,6 @@
       flex: 1;
       min-width: 0;
       box-sizing: border-box;
-      border-right: 1px solid rgba($light, 0.45);
 
       span {
         display: block;
@@ -262,7 +290,7 @@
         top: 1.15rem;
         left: 1.25rem;
         z-index: 1;
-        color: $light;
+        color: $text;
         font-size: $fs-sm;
         text-transform: uppercase;
         pointer-events: none;
@@ -277,19 +305,19 @@
       border: 0;
       padding: 2.5rem 1.25rem 0.75rem;
       background: transparent;
-      color: $light;
+      color: $text;
       text-transform: uppercase;
     }
 
     button {
       flex: 1;
       width: auto;
-      height: auto;
+      height: 100%;
       border-radius: 0;
-      color: $light;
+      background: var(--contact-btn);
+      color: var(--contact-btn-text);
       font-size: $fs-sm;
       text-transform: uppercase;
     }
   }
 }
-
