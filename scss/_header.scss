@@ -2,6 +2,7 @@
 @use "mixins" as *;
 @use "placeholders" as *;
 
+// phone
 header {
   @include flex($jc: space-between, $wrap: wrap);
   padding: 40px $padding 20px;
@@ -28,27 +29,21 @@ header {
       height: 10px;
     }
 
-    .text {
-      font-size: 0;
-      line-height: 0;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 31.25px;
-        height: 1px;
-        background-color: $light;
-        transition:
-          top 0.2s ease,
-          left 0.2s ease,
-          width 0.2s ease,
-          transform 0.2s ease;
-      }
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 31.25px;
+      height: 1px;
+      background-color: $light;
+      transition:
+        top 0.2s ease,
+        left 0.2s ease,
+        width 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .bar {
+    .bottom-line {
       position: absolute;
       top: 9px;
       left: 0;
@@ -65,18 +60,6 @@ header {
 
   .header-phone-number {
     display: none;
-  }
-
-  @include mq-tab {
-    &{
-        padding: 30px $padding 10px;
-    }
-    & div {
-      display: none;
-    }
-    .header-phone-number {
-      display: block;
-    }
   }
 }
 
@@ -119,35 +102,21 @@ body.show header {
       height: 24px;
     }
 
-    .text::before,
-    .bar {
+    .top-line,
+    .bottom-line {
       top: 50%;
       left: 50%;
       width: 33.1133px;
       height: 0.8278px;
     }
 
-    .text::before {
+    .top-line {
       transform: translate(-50%, -50%) rotate(45deg);
     }
 
-    .bar {
+    .bottom-line {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
-  }
-
-  @include mq-tab {
-    display: flex;
-    min-height: 0;
-    gap: 1rem;
-  }
-}
-
-body.show {
-  overflow: hidden;
-
-  @include mq-tab {
-    overflow: visible;
   }
 }
 
@@ -176,7 +145,7 @@ nav {
 
   a {
     display: block;
-    font-size: $fs-2xl;
+    font-size: $fs-xl;
     text-align: left;
     text-decoration: none;
     text-transform: uppercase;
@@ -209,6 +178,10 @@ nav {
     text-align: center;
     font-size: $fs-base;
 
+    .mobile-phone-number {
+      font-size: 20px;
+    }
+
     address {
       display: block;
       width: auto;
@@ -221,10 +194,6 @@ nav {
     }
   }
 
-  .mobile-phone-number {
-    font-size: 20px;
-  }
-
   .social-links {
     display: flex;
     flex-direction: row;
@@ -233,44 +202,71 @@ nav {
     gap: 1rem;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: $padding;
 
     a {
       font-size: $fs-base;
       text-transform: uppercase;
     }
   }
+}
+
+body.show {
+  overflow: hidden;
 
   @include mq-tab {
-    &,
-    .show & {
+    overflow: visible;
+  }
+}
+
+
+// desktop
+@include mq-tab {
+  header {
+    padding: 30px $padding 10px;
+
+    div {
+      display: none;
+    }
+    .header-phone-number {
       display: block;
-      position: static;
-      inset: auto;
-      z-index: auto;
-      min-height: 0;
-      overflow: visible;
-      padding: 0;
-      background-color: transparent;
+    }
+  }
 
-      .mobile-menu-decoration,
-      .mobile-menu-footer {
-        display: none;
-      }
+  body.show header {
+    display: flex;
+    min-height: 0;
+    gap: 1rem;
+  }
 
-      ul {
-        @include flex($d: row, $jc: space-between, $gap: 1rem);
-      }
+  nav,
+  .show nav {
+    display: block;
+    position: static;
+    inset: auto;
+    z-index: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 0;
+    background-color: transparent;
 
-      a {
-        font-size: $fs-base;
-        color: $light;
-      }
+    .mobile-menu-decoration,
+    .mobile-menu-footer {
+      display: none;
+    }
 
-      a,
-      .dark & a {
-        border: none;
-      }
+    ul {
+      @include flex($d: row, $jc: space-between, $gap: 1rem);
+    }
+
+    a {
+      font-size: $fs-base;
+      color: $light;
+    }
+
+    a,
+    .dark & a {
+      border: none;
     }
   }
 }
