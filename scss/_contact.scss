@@ -41,7 +41,7 @@
   box-sizing: border-box;
   min-height: 51.625rem;
   overflow: hidden;
-  padding: 3.25rem $padding 0;
+  padding: 3.25rem $padding 3.75rem;
   background-color: var(--contact-bg);
   color: var(--contact-text);
 }
@@ -49,36 +49,37 @@
 .contact-banner-info {
   position: relative;
   z-index: 4;
-  @include flex(row, space-between, flex-start, nowrap, 1rem);
+  @include flex(row, center, flex-start, nowrap, 1rem);
 }
 
 .phone-number {
+  width: 50%;
   color: var(--contact-text);
   font-family: $heading;
-  font-size: $fs-lg;
+  font-size: $fs-sm;
+  text-align: right;
   line-height: 1.2;
   border-bottom: 1px solid $text;
 }
 
 .contact-banner-info address {
-  @include flex(column, flex-start, flex-end, nowrap, 0);
-  width: 9.5rem;
-  margin-top: 7.25rem;
+  @include flex(column, flex-start, flex-start, nowrap, 0);
+  width: 50%;
+  margin-top: 5rem;
   color: var(--contact-text);
   font-size: $fs-sm;
   font-style: normal;
   line-height: 1.45;
-  text-align: right;
+  text-align: left;
   text-transform: uppercase;
 }
 
 .contact-banner-title {
-  position: absolute;
-  z-index: 2;
-  top: 16.5rem;
-  left: $padding;
-  width: calc(100% - ($padding * 2));
-  margin: 0;
+  position: relative;
+  @include flex(column, center, flex-start, nowrap, 0);
+  z-index: 100;
+  width: 100%;
+  margin-top: 5rem;
   color: var(--contact-text);
   font-family: $heading;
   font-size: clamp(4.5rem, 18vw, 6.5rem);
@@ -87,18 +88,29 @@
   letter-spacing: -0.06em;
   text-transform: uppercase;
 
-  span {
-    display: block;
+  .get-in {
+    @include flex(column, flex-start, flex-end);
+    width: 100%;
+    padding-right: 50%;
+
+    span {
+      display: block;
+      text-align: right;
+    }
+
+    span:nth-child(2) {
+      margin-top: 1rem;
+      text-align: right;
+    }
   }
 
-  span:nth-child(2) {
-    margin: 1.25rem 0 0 4rem;
-  }
-
-  span:nth-child(3) {
-    margin-top: 1.25rem;
+  .text-touch {
+    position: relative;
+    margin-top: 1rem;
+    padding-left: 50%;
     color: $secondary;
-    text-align: right;
+    text-align: left;
+    left: clamp(-8rem, -20vw, -5rem);
   }
 }
 
@@ -109,8 +121,8 @@
 .contact-banner-decoration {
   position: absolute;
   z-index: 3;
-  top: 28.25rem;
-  left: 38%;
+  top: 43%;
+  right: 41%;
   width: clamp(2.75rem, 13vw, 4.25rem);
   height: auto;
   filter: brightness(0) saturate(100%) invert(73%) sepia(63%) saturate(540%)
@@ -119,12 +131,13 @@
 
 .contact-banner-image {
   position: absolute;
-  z-index: 2;
-  top: 29.5rem;
-  right: 6%;
-  width: 33%;
-  height: 11.25rem;
+  z-index: 1;
+  top: 45%;
+  left: 53%;
+  width: 40%;
+  aspect-ratio: 4/5;
   object-fit: cover;
+  object-position: left;
 }
 
 .find-room-heading {
@@ -132,10 +145,7 @@
 }
 
 .room-search {
-  position: absolute;
-  z-index: 3;
-  bottom: 2.75rem;
-  left: $padding;
+  margin-top: clamp(5rem, 23vw, 18rem);
   width: 6.75rem;
   height: 6.75rem;
   background-color: var(--contact-form);
