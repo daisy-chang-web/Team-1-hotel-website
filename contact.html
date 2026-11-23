@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Page</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
     <script src="scripts/script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header" class="theme-dark">
       <p class="site-logo"><a href="index.html">BankHotel</a></p>
       <div>
@@ -20,7 +20,7 @@
           aria-label="Open navigation"
         >
           <span class="hamburger-content">
-            <span class="top-line" ></span>
+            <span class="top-line"></span>
             <span class="bottom-line"></span>
           </span>
         </button>
@@ -53,15 +53,16 @@
           </ul>
         </div>
       </nav>
-      <p class="header-phone-number"><a href="tel:+12345678910">+1 234 567 8910</a></p>
+      <p class="header-phone-number">
+        <a href="tel:+12345678910">+1 234 567 8910</a>
+      </p>
     </header>
 
     <main>
       <!-- Dev 1: contact page  ------------------------------->
-        <section class="get-in-touch">
+      <section class="get-in-touch get-in-touch--light">
         <div class="contact-banner-info">
           <a class="phone-number" href="tel:+12345678910"> +1 234 567 8910 </a>
-
           <address>
             <span>1 Some Street</span>
             <span>Vancouver, Canada</span>
@@ -69,9 +70,11 @@
         </div>
 
         <h1 class="contact-banner-title">
-          <span>Get</span>
-          <span>In</span>
-          <span>Touch</span>
+          <div class="get-in">
+            <span>Get</span>
+            <span>In</span>
+          </div>
+          <span class="text-touch">Touch</span>
         </h1>
 
         <img
@@ -88,7 +91,7 @@
         />
         <img
           class="contact-banner-image"
-          src="images/hotel-lobby-seating-area.jpg"
+          src="images/suite-living-room-leather-armchair.jpg"
           alt="Hotel room interior"
         />
 
@@ -102,11 +105,11 @@
             <span>Check out</span>
             <input type="date" name="check-out" />
           </label>
-          <button type="submit">Book room</button>
+          <button class="book-room-btn" type="submit">Book room</button>
         </form>
       </section>
     </main>
-    
+
     <footer class="footer footer--light">
       <div class="footer-container">
         <section class="footer-about footer-section">
@@ -116,7 +119,9 @@
               The five-star hotel in a beautiful European city with a modern
               restaurant, conference hall, and art-bar.
             </p>
-            <p class="copyright-text">&copy;2026 All rights reserved. BankHotel</p>
+            <p class="copyright-text">
+              &copy;2026 All rights reserved. BankHotel
+            </p>
           </div>
         </section>
 
@@ -157,5 +162,5 @@
 
       <p class="copyright">&copy;2026 All rights reserved. BankHotel</p>
     </footer>
-</body>
+  </body>
 </html>
