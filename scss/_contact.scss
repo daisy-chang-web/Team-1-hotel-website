@@ -59,7 +59,15 @@
   font-size: $fs-sm;
   text-align: right;
   line-height: 1.2;
-  border-bottom: 1px solid $text;
+  border-bottom: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-bottom: 0;
+  }
 }
 
 .contact-banner-info address {
@@ -196,6 +204,7 @@
     text-align: left;
     font-size: $fs-xl;
     border: 0;
+    text-decoration: none;
   }
 
   .contact-banner-info address {
