@@ -35,7 +35,7 @@
   }
 }
 
-//phone
+//get-in-touch
 .get-in-touch {
   position: relative;
   box-sizing: border-box;
@@ -178,7 +178,6 @@
   }
 }
 
-// desktop
 @include mq-tab {
   .get-in-touch {
     min-height: 42rem;
@@ -193,7 +192,7 @@
   }
 
   .phone-number {
-    width:70%;
+    width: 70%;
     text-align: left;
     font-size: $fs-xl;
     border: 0;
@@ -212,21 +211,20 @@
     padding-left: $padding;
     width: 100%;
     margin-bottom: 5rem;
-    font-size: clamp(9rem, 17vw ,21rem);
+    font-size: clamp(9rem, 17vw, 21rem);
     line-height: 0.82;
     z-index: 3;
-    gap:3rem;
-    
+    gap: 3rem;
 
     span {
       display: inline;
     }
 
-    .get-in{
+    .get-in {
       position: relative;
-      margin-top:5rem;
+      margin-top: 5rem;
       flex-direction: row;
-      gap:3rem;
+      gap: 3rem;
       text-align: right;
 
       .in-word {
@@ -234,11 +232,9 @@
         margin-top: 0;
       }
     }
-    .text-touch{
-      margin:0;
+    .text-touch {
+      margin: 0;
     }
-
-
   }
 
   .contact-banner-line {
@@ -249,7 +245,7 @@
     left: 0%;
     width: 100%;
     height: auto;
-    object-fit:contain;
+    object-fit: contain;
   }
 
   .contact-banner-decoration {
@@ -265,8 +261,8 @@
     top: 10%;
     left: 71%;
     width: 30%;
-    padding-right:$padding;
-    aspect-ratio:1/1;
+    padding-right: $padding;
+    aspect-ratio: 1/1;
   }
 
   .find-room-heading {
@@ -277,7 +273,7 @@
   }
 
   .room-search {
-    margin-top:0;
+    margin-top: 0;
     padding-left: $padding;
     width: 65%;
     height: 9.5vw;
@@ -289,7 +285,7 @@
       display: block;
       flex: 1;
       min-width: 0;
-      padding-right:10%;
+      padding-right: 10%;
       box-sizing: border-box;
 
       span {
@@ -321,7 +317,7 @@
       flex: 1;
       width: auto;
       align-self: stretch;
-      height:auto;
+      height: auto;
       border-radius: 0;
       background: var(--contact-btn);
       color: var(--contact-btn-text);
