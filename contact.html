@@ -110,6 +110,140 @@
           <button class="book-room-btn" type="submit">Book room</button>
         </form>
       </section>
+
+      <section class="contact-message" aria-labelledby="contact-message-title">
+        <div class="contact-message-content">
+          <h2 class="contact-message-title" id="contact-message-title">
+            <span>Send Us A Message</span>
+          </h2>
+
+          <form class="contact-message-form" action="#" method="post">
+            <label for="contact-full-name">Full Name</label>
+            <input
+              id="contact-full-name"
+              name="full-name"
+              type="text"
+              placeholder="Full Name"
+              autocomplete="name"
+              required
+            />
+
+            <label for="contact-email">Email</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="contact-phone">Phone Number</label>
+            <input
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              placeholder="Phone Number"
+              autocomplete="tel"
+            />
+
+            <label for="contact-topic">Inquiry Topic</label>
+            <select id="contact-topic" name="topic" required>
+              <option value="" disabled selected>Inquiry Topic</option>
+              <option value="room-reservation">Room Reservation</option>
+              <option value="ice-restaurant-booking">
+                Ice Restaurant Booking
+              </option>
+              <option value="conference-hall-events">
+                Conference Hall &amp; Events
+              </option>
+              <option value="general-inquiry">General Inquiry</option>
+            </select>
+
+            <label for="contact-message-body">Message</label>
+            <textarea
+              id="contact-message-body"
+              name="message"
+              placeholder="Message"
+              rows="6"
+              required
+            ></textarea>
+
+            <button type="submit">
+              <span>Send Enquiry</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="contact-faq" aria-labelledby="contact-faq-title">
+        <div class="contact-faq-layout">
+          <img
+            class="contact-faq-image"
+            src="images/hotel-lobby-lounge-vertical.jpg"
+            alt="Seating area in the hotel lounge"
+          />
+
+          <div class="contact-faq-content">
+            <h2 class="contact-faq-title" id="contact-faq-title">FAQ</h2>
+
+            <div class="contact-faq-list">
+              <details class="contact-faq-item" open>
+                <summary>
+                  <span>Do you offer airport shuttle services?</span>
+                  <span class="contact-faq-icon" aria-hidden="true"></span>
+                </summary>
+                <div class="contact-faq-answer">
+                  <p>
+                    Please contact us before your arrival to confirm transfer
+                    availability and make arrangements.
+                  </p>
+                </div>
+              </details>
+
+              <details class="contact-faq-item">
+                <summary>
+                  <span>Is on-site valet parking available for guests?</span>
+                  <span class="contact-faq-icon" aria-hidden="true"></span>
+                </summary>
+                <div class="contact-faq-answer">
+                  <p>
+                    Contact the hotel directly for current valet parking
+                    availability and details.
+                  </p>
+                </div>
+              </details>
+
+              <details class="contact-faq-item">
+                <summary>
+                  <span>What is your cancellation and refund policy?</span>
+                  <span class="contact-faq-icon" aria-hidden="true"></span>
+                </summary>
+                <div class="contact-faq-answer">
+                  <p>
+                    Cancellation and refund terms depend on your reservation.
+                    Please check your booking confirmation or contact us.
+                  </p>
+                </div>
+              </details>
+
+              <details class="contact-faq-item">
+                <summary>
+                  <span>Can I book the Conference Hall for private events?</span>
+                  <span class="contact-faq-icon" aria-hidden="true"></span>
+                </summary>
+                <div class="contact-faq-answer">
+                  <p>
+                    Contact our team with your preferred date and event details
+                    to ask about availability.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer footer--light">
