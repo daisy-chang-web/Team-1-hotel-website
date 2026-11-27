@@ -379,11 +379,12 @@
 
 .footer-container {
   display: none;
+  gap: 1rem;
 }
 
 .copyright {
   margin: 0;
-  opacity: 0.7;
+  opacity: 0.3;
   font-size: $fs-sm;
   text-align: center;
 }
@@ -406,11 +407,20 @@
     h2 {
       margin: 0 0 1.5rem;
       color: var(--footer-text);
-      font-family: $body-font;
-      font-size: $fs-md;
+      font-family: $heading;
+      font-size: $fs-lg;
       font-weight: 400;
       text-transform: uppercase;
     }
+
+   &.footer-news h2{
+font-family: $body-font;
+
+    }
+
+
+
+
 
     .footer-slash {
       color: $secondary;
@@ -510,7 +520,7 @@
   }
 
   .copyright-text {
-    opacity: 0.7;
+    opacity: 0.3;
   }
   .copyright {
     display: none;

@@ -19,9 +19,11 @@ h6 {
 
 a {
   text-decoration: none;
+  border-bottom: 2px solid transparent;
   transition:
     color 0.2s ease,
     opacity 0.2s ease;
+    
 
   &:hover,
   &:focus-visible,
@@ -42,6 +44,7 @@ a {
   p,
   a {
     color: $light;
+    border-bottom: 2px solid transparent;
   }
 
   a:hover,
